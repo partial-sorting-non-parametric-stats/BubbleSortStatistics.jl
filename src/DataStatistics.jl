@@ -16,6 +16,11 @@ end
 
 envelope(data) = accumulate(max,data)
 
+B_curve(x, β, dist) = min(β/ccdf(dist,x),1) - min(β,ccdf(dist,x))
+B_curve_normal(x,β) = B_curve(x,β,Normal())
+B_curve_uniform(x,β) = B_curve(x,β,Uniform())
+B_curve_wide_uniform(x,β) = B_curve(x,β,Uniform(-1,1))
+
 function bs_stat(data, β, dist)
     n = length(data)
     sdata = copy(data)
