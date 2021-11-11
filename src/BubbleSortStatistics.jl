@@ -1,4 +1,4 @@
-using Distributions, QuadGK, Interpolations, Calculus, Roots, ProgressMeter
+using Distributions, QuadGK, StatsBase, Interpolations, Calculus, Roots, ProgressMeter
 import Distributions: pdf, cdf, quantile
 import Base: length
 
